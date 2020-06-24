@@ -18,7 +18,7 @@ import datadog.api
 import pytz
 import yaml
 
-from .bcolors import *
+from bcolors import FAIL, WARNING, RED, GREEN, ENDC, BOLD
 
 
 PROGNAME = 'dogpush'
