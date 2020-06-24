@@ -18,7 +18,7 @@ import datadog.api
 import pytz
 import yaml
 
-from bcolors import FAIL, WARNING, RED, GREEN, ENDC, BOLD
+from bcolors import FAIL, WARNING, OK, ENDC, BOLD
 
 
 PROGNAME = 'dogpush'
@@ -373,9 +373,9 @@ def command_diff(args):
                 if line.startswith('---') or line.startswith('+++'):
                     sys.stdout.write(BOLD + line + ENDC)
                 elif line.startswith('-'):
-                    sys.stdout.write(RED + line + ENDC)
+                    sys.stdout.write(FAIL + line + ENDC)
                 elif line.startswith('+'):
-                    sys.stdout.write(GREEN + line + ENDC)
+                    sys.stdout.write(OK + line + ENDC)
                 else:
                     sys.stdout.write(line)
     if only_remote and not args.ignore_untracked:
